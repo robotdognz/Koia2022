@@ -20,7 +20,7 @@ public class CollideIntoObstacle : MonoBehaviour
     {
         if (crash.gameObject.tag == "Obstacle")
         {
-            //Debug.Log("You crashed into something and dropped your phone.This is the end of your journey.");
+            Debug.Log("You crashed into something and dropped your phone.This is the end of your journey.");
             Application.Quit();//for now
         }
     }
