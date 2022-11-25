@@ -418,6 +418,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242989579388770900, guid: 3c92108ea4d4e50499feb16f8c708031, type: 3}
+      propertyPath: lanes
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 242989579388770900, guid: 3c92108ea4d4e50499feb16f8c708031, type: 3}
+      propertyPath: laneChangeSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 242989579388770902, guid: 3c92108ea4d4e50499feb16f8c708031, type: 3}
       propertyPath: m_Name
       value: Player
