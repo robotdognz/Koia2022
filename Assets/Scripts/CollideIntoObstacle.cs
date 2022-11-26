@@ -22,13 +22,13 @@ public class CollideIntoObstacle : MonoBehaviour
         {
             Debug.Log("You crashed into something and dropped your phone.This is the end of your journey.");
             AudioManager.Instance.PlayObstacleHitSound();
-            Application.Quit();//for now
+            //Application.Quit();//for now
         }
 
         if (crash.gameObject.tag == "End Point")
         {
             Debug.Log("My friend! You are here!");
-            Application.Quit();//for now
+            //Application.Quit();//for now
         }
 
 
