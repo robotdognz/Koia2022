@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
     [SerializeField] private AudioMixer MasterMixer;
     [SerializeField] private AudioMixerSnapshot OffPhoneSnapshot;
     [SerializeField] private AudioMixerSnapshot OnPhoneSnapshot;
@@ -21,9 +23,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource encouragementAudioSource;
     [SerializeField] private AudioClip[] encouragementAudioClips;
 
+    private int encouragementCounter;
+
     public bool OnPhone;
 
     [SerializeField] private bool debug = true;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        encouragementCounter = Random.Range(1, 10);
+    }
 
     // Update is called once per frame
     void Update()
@@ -53,10 +67,10 @@ public class AudioManager : MonoBehaviour
     
     public void SetInsanityLevel(float level)
     {
-        float lpFreq = Remap(level, 0f, 1f, 22000f, 1000f);
-        float reverbAmount = Remap(level, 0f, 1f, -10000f, 0f);
+        float lpFreq = Remap(level, 0.5f, 1f, 22000f, 1000f);
+        float reverbAmount = Remap(level, 0.5f, 1f, -10000f, 0f);
 
-        insanityAudioSource.volume = level;
+        insanityAudioSource.volume = Remap(level, 0.5f, 1f, 0f, 1f);
         MasterMixer.SetFloat("LPFreq", lpFreq);
         MasterMixer.SetFloat("ReverbAmount", reverbAmount);
     }
@@ -66,11 +80,13 @@ public class AudioManager : MonoBehaviour
     {
         likeAudioSource.Play();
 
-        if (Random.value < encouragementChance) PlayEncouragementSound();
+        encouragementCounter -= 1;
+        if (encouragementCounter <= 0) PlayEncouragementSound();
     }
 
     public void PlayEncouragementSound()
     {
+        encouragementCounter = Random.Range(1, 10);
         int clipIndex = Random.Range(0, encouragementAudioClips.Length);
         encouragementAudioSource.clip = encouragementAudioClips[clipIndex];
         encouragementAudioSource.PlayDelayed(0.05f);

@@ -32,22 +32,20 @@ public class Like : MonoBehaviour
             // Debug.Log("Exit");
             Destroy(this.gameObject);
         }
-
-
     }
 
     private void OnMouseDown() {
         Debug.Log("Exit");
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Finger")
-        {
-            // increment score
-            PhoneGameController phoneGame = FindObjectOfType<PhoneGameController>();
-            phoneGame.IncrementScore();
-            Destroy(this.gameObject);
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.tag == "Finger")
+    //     {
+    //         // increment score
+    //         PhoneGameController phoneGame = FindObjectOfType<PhoneGameController>();
+    //         phoneGame.IncrementScore();
+    //         Destroy(this.gameObject);
+    //     }
+    // }
 }

@@ -193,7 +193,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47889c90bdd159341b8c0e0da317d73a, type: 3}
   - {fileID: 8300000, guid: 486ac18deb62f5a4a8ea09600e431ff3, type: 3}
   OnPhone: 0
-  debug: 1
+  debug: 0
 --- !u!1 &7717208114860169975
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2379423644424074216, guid: 42fb1e5c749c42a49be93f7a9423ba45, type: 2}
   m_audioClip: {fileID: 8300000, guid: ad87ec4f97ef1844491b9f89e1a9d801, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.594
+  m_Volume: 0.389
   m_Pitch: 1
   Loop: 0
   Mute: 0
