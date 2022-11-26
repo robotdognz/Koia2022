@@ -8,6 +8,7 @@ public class PhoneToggle : MonoBehaviour
 {
     [SerializeField] GameObject phonePanel;
     [SerializeField] TextMeshProUGUI testText;
+    [SerializeField] PhoneGameController phoneGame;
 
     void Update()
     {
@@ -19,12 +20,26 @@ public class PhoneToggle : MonoBehaviour
         if (phoneOnScreen.Contains(mouse))
         {
             testText.enabled = true;
-            testText.SetText("X:{0:2}\nY:{1:2}", (mouse.x - phoneOnScreen.xMin) / phoneOnScreen.width, (mouse.y - phoneOnScreen.yMin) / phoneOnScreen.height);
+            float mouseX = mouse.x - phoneOnScreen.xMin;
+            float mouseY = mouse.y - phoneOnScreen.yMin;
+
+            // pass to phone game
+
+            // test phone game
+            if (phoneGame != null && Input.GetMouseButtonDown(0))
+            {
+                phoneGame.InputMouse(new Vector2(mouseX, mouseY));
+            }
+
+            mouseX = mouseX / phoneOnScreen.width;
+            mouseY = mouseY / phoneOnScreen.height;
+            testText.SetText("X:{0:2}\nY:{1:2}", mouseX, mouseY);
         }
         else
         {
             testText.enabled = false;
         }
+
 
         // move phone
         if (phonePanel != null && Input.GetKeyDown(KeyCode.Return))
