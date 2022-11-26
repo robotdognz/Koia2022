@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class BillboardingTech : MonoBehaviour
 {
-
+    [SerializeField] Sprite[] sprites;
     private Camera Cam1stPerson;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cam1stPerson = Camera.main;
+
+        if (sprites != null && sprites.Length > 0)
+        {
+            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+            renderer.sprite = sprites[Random.Range(0, sprites.Length)];
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-            transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
 }
