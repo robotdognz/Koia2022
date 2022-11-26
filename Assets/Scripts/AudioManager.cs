@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource likeAudioSource;
     [SerializeField] private AudioSource strafeAudioSource;
+    [SerializeField] private AudioSource hitObstacleAudioSource;
 
     [SerializeField] private AudioSource encouragementAudioSource;
     [SerializeField] private AudioClip[] encouragementAudioClips;
@@ -83,6 +84,8 @@ public class AudioManager : MonoBehaviour
         encouragementCounter -= 1;
         if (encouragementCounter <= 0) PlayEncouragementSound();
     }
+
+    public void PlayObstacleHitSound() => hitObstacleAudioSource.Play();
 
     public void PlayStrafeSound() => strafeAudioSource.Play();
 

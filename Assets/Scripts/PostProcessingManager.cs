@@ -35,7 +35,7 @@ public class PostProcessingManager : MonoBehaviour
 
         while (transition < 1f)
         {
-            transition += 0.01f;
+            transition += 0.02f;
             volume.weight = Mathf.Lerp(initialWeight, targetWeight, transition);
             yield return null;
         }
