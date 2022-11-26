@@ -8,11 +8,9 @@ public class PhoneDeprivation : MonoBehaviour
     [SerializeField] private float sanity = 1f;
     [SerializeField] private float depletionTime = 15f;
 
-    private PostProcessVolume ppVolume;
-
     private void Start()
     {
-        ppVolume = FindObjectOfType<PostProcessVolume>();
+
     }
 
     // Update is called once per frame
@@ -22,7 +20,9 @@ public class PhoneDeprivation : MonoBehaviour
         sanity = Mathf.Clamp(sanity, 0f, 1f);
         AudioManager.Instance.SetInsanityLevel(1 - sanity);
 
-        if (ppVolume != null) ppVolume.weight = Remap(sanity, 0f, 0.5f, 1f, 0f);
+        //if (ppVolume != null) ppVolume.weight = Remap(sanity, 0f, 0.5f, 1f, 0f);
+
+        PostProcessingManager.Instance.SetInsanityLevel(1 - sanity);
     }
 
     public void RecoverSanity(float amount)

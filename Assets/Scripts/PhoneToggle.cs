@@ -63,6 +63,7 @@ public class PhoneToggle : MonoBehaviour
                 bool onPhone = animator.GetBool("OnPhone");
                 animator.SetBool("OnPhone", !onPhone);
                 AudioManager.Instance.SetGameState(!onPhone);
+                PostProcessingManager.Instance.SetGameState(!onPhone);
             }
         }
     }
