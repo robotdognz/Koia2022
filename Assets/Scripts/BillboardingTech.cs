@@ -9,6 +9,7 @@ public class BillboardingTech : MonoBehaviour
 
     void Start()
     {
+        
         Cam1stPerson = Camera.main;
 
         if (sprites != null && sprites.Length > 0)

@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool isMoving = true;
 
+    void Awake()
+    {
+        Cursor.visible = false;//don't see the mouse cursor
+    }
+
     void Start()
     {
         // setup lanes from initial parameters
