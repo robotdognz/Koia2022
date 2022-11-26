@@ -15,7 +15,8 @@ public class Finger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Input.mousePosition + phone.localPosition;
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Mathf.Clamp(Input.mousePosition.y, 0, Screen.height), 0);
+        transform.position = mousePos + phone.localPosition;
     }
 
     

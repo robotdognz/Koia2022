@@ -55,7 +55,8 @@ public class PhoneGameController : MonoBehaviour
             if (hit.collider.gameObject.tag != "LikeDespawn")
             {
                 // Debug.Log("Thing");
-                Destroy(hit.collider.gameObject);
+                //Destroy(hit.collider.gameObject);
+                hit.collider.GetComponent<Like>().Pop();
                 PhoneGameController phoneGame = FindObjectOfType<PhoneGameController>();
                 phoneGame.IncrementScore();
             }
