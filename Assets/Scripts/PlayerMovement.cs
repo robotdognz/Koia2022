@@ -84,6 +84,11 @@ public class PlayerMovement : MonoBehaviour
                 horizontalInput = 0;
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Debug.Log("I quit.");
+            Application.Quit();
+        }
     }
 
     void FixedUpdate()
