@@ -285,10 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2041717342, guid: bde0d37e5b8301541a931016933ad832, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1219623013}
     - target: {fileID: 5702694920215372708, guid: bde0d37e5b8301541a931016933ad832, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -510,17 +506,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e791fb3500cc27743970b6b475c4e470, type: 3}
---- !u!114 &1219623013 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7536306236363682881, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-  m_PrefabInstance: {fileID: 7536306235167296548}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1292533383
 GameObject:
   m_ObjectHideFlags: 0
