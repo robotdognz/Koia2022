@@ -46,12 +46,14 @@ public class PhoneGameController : MonoBehaviour
         RaycastHit2D hit = Physics2D.GetRayIntersection(phoneGameCamera.ViewportPointToRay(mouse));
         if (hit.collider != null)
         {
-            Debug.Log(hit.transform.position);
-            Debug.Log(hit.collider.gameObject.name);
+            // Debug.Log(hit.transform.position);
+            // Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.gameObject.tag != "LikeDespawn")
             {
-                Debug.Log("Thing");
+                // Debug.Log("Thing");
                 Destroy(hit.collider.gameObject);
+                PhoneGameController phoneGame = FindObjectOfType<PhoneGameController>();
+                phoneGame.IncrementScore();
             }
         }
     }
