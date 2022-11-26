@@ -59,7 +59,7 @@ public class PhoneToggle : MonoBehaviour
 
 
         // move phone
-        if (phonePanel != null && Input.GetKeyDown(KeyCode.Return))
+        if (phonePanel != null && Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1))
         {
             // toggle phone
             Animator animator = phonePanel.GetComponent<Animator>();
