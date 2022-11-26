@@ -20,6 +20,8 @@ public class PhoneGameController : MonoBehaviour
         score += 1;
         scoreText.text = "Score: " + score;
         AudioManager.Instance.PlayLikeSound();
+        PhoneDeprivation phoneDeprivation = FindObjectOfType<PhoneDeprivation>();
+        phoneDeprivation.RecoverSanity(0.05f);
         // Debug.Log("Score: " + score);
     }
 

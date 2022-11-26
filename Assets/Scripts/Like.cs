@@ -32,8 +32,6 @@ public class Like : MonoBehaviour
             // Debug.Log("Exit");
             Destroy(this.gameObject);
         }
-
-
     }
 
     private void OnMouseDown() {

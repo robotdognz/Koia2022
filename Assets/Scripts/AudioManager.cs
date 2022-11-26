@@ -67,10 +67,10 @@ public class AudioManager : MonoBehaviour
     
     public void SetInsanityLevel(float level)
     {
-        float lpFreq = Remap(level, 0f, 1f, 22000f, 1000f);
-        float reverbAmount = Remap(level, 0f, 1f, -10000f, 0f);
+        float lpFreq = Remap(level, 0.5f, 1f, 22000f, 1000f);
+        float reverbAmount = Remap(level, 0.5f, 1f, -10000f, 0f);
 
-        insanityAudioSource.volume = level;
+        insanityAudioSource.volume = Remap(level, 0.5f, 1f, 0f, 1f);
         MasterMixer.SetFloat("LPFreq", lpFreq);
         MasterMixer.SetFloat("ReverbAmount", reverbAmount);
     }
