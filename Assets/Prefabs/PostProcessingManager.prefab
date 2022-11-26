@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insanityVolume: {fileID: 8360576507920594651}
   blurVolume: {fileID: 8360576508828469396}
+  transitionSpeed: 0.015
 --- !u!1 &8360576507920594653
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,4 +146,4 @@ MonoBehaviour:
   isGlobal: 1
   blendDistance: 0
   weight: 0
-  priority: 0
+  priority: 1

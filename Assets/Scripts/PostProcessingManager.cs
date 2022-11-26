@@ -9,6 +9,7 @@ public class PostProcessingManager : MonoBehaviour
 
     [SerializeField] private PostProcessVolume insanityVolume;
     [SerializeField] private PostProcessVolume blurVolume;
+    [SerializeField] private float transitionSpeed = 0.015f;
 
     private void Awake()
     {
@@ -35,9 +36,9 @@ public class PostProcessingManager : MonoBehaviour
 
         while (transition < 1f)
         {
-            transition += 0.02f;
+            transition += transitionSpeed;
             volume.weight = Mathf.Lerp(initialWeight, targetWeight, transition);
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
 }
