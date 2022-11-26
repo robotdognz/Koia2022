@@ -20,19 +20,18 @@ public class PhoneToggle : MonoBehaviour
         if (phoneOnScreen.Contains(mouse))
         {
             testText.enabled = true;
+            // get mouse position relative to phone screen
             float mouseX = mouse.x - phoneOnScreen.xMin;
             float mouseY = mouse.y - phoneOnScreen.yMin;
-
+            // convert to viewport coordinates
+            mouseX = mouseX / phoneOnScreen.width;
+            mouseY = mouseY / phoneOnScreen.height;
             // pass to phone game
-
-            // test phone game
             if (phoneGame != null && Input.GetMouseButtonDown(0))
             {
                 phoneGame.InputMouse(new Vector2(mouseX, mouseY));
             }
-
-            mouseX = mouseX / phoneOnScreen.width;
-            mouseY = mouseY / phoneOnScreen.height;
+            // debug
             testText.SetText("X:{0:2}\nY:{1:2}", mouseX, mouseY);
         }
         else

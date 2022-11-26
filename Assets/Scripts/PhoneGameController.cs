@@ -22,10 +22,7 @@ public class PhoneGameController : MonoBehaviour
     public void InputMouse(Vector2 mouse)
     {
         // move pointer to mouse
-        Debug.Log("screen pos: "+ mouse + ", world pos: " + phoneGameCamera.ScreenToWorldPoint(mouse));
-
-        mouse.y = mouse.y * 1.3f; // this is somewhat arbitrary, but we don't have time to figure out why the scaling is off
-
-        pointer.transform.position = phoneGameCamera.ScreenToWorldPoint(mouse) + Vector3.forward;
+        // Debug.Log("screen pos: "+ mouse + ", world pos: " + phoneGameCamera.ScreenToWorldPoint(mouse));
+        pointer.transform.position = phoneGameCamera.ViewportToWorldPoint(mouse) + Vector3.forward;
     }
 }
