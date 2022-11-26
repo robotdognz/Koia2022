@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput = 0;
 
+    [SerializeField] bool isMoving = true;
+
     void Start()
     {
         // setup lanes from initial parameters
@@ -40,40 +42,56 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void DisablePlayer()
+    {
+        isMoving = false;
+    }
+
+    public void EnablePlayer()
+    {
+        isMoving = true;
+    }
+
     void Update()
     {
-        // check for movement if we aren't already moving
-        if (!changingLane)
+        if (isMoving)
         {
-            horizontalInput = Input.GetAxis("Horizontal");
-
-            // is player trying to change lane
-            if (horizontalInput != 0)
+            // check for movement if we aren't already moving
+            if (!changingLane)
             {
-                // change lane if target lane within bounds
-                int targetLane = currentLane + (horizontalInput > 0 ? 1 : -1);
-                if (targetLane >= 0 && targetLane < lanePositions.Length)
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                // is player trying to change lane
+                if (horizontalInput != 0)
                 {
-                    changingLane = true;
-                    currentLane = targetLane;
-                    AudioManager.Instance.PlayStrafeSound();
+                    // change lane if target lane within bounds
+                    int targetLane = currentLane + (horizontalInput > 0 ? 1 : -1);
+                    if (targetLane >= 0 && targetLane < lanePositions.Length)
+                    {
+                        changingLane = true;
+                        currentLane = targetLane;
+                        AudioManager.Instance.PlayStrafeSound();
+                    }
                 }
             }
-        }
-        else
-        {
-            horizontalInput = 0;
+            else
+            {
+                horizontalInput = 0;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * forwardMoveSpeed * Time.fixedDeltaTime);
-
-        if (changingLane)
+        if (isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(lanePositions[currentLane], transform.position.y, transform.position.z), laneChangeSpeed * Time.fixedDeltaTime);
-            if (transform.position.x == lanePositions[currentLane]) changingLane = false;
+            transform.Translate(Vector3.forward * forwardMoveSpeed * Time.fixedDeltaTime);
+
+            if (changingLane)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(lanePositions[currentLane], transform.position.y, transform.position.z), laneChangeSpeed * Time.fixedDeltaTime);
+                if (transform.position.x == lanePositions[currentLane]) changingLane = false;
+            }
         }
     }
 }
