@@ -8,6 +8,8 @@ TagManager:
   - LikeDespawn
   - Finger
   - End Point
+  - ScoreText
+  - PhoneGame
   layers:
   - Default
   - TransparentFX
