@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     changingLane = true;
                     currentLane = targetLane;
+                    AudioManager.Instance.PlayStrafeSound();
                 }
             }
         }
