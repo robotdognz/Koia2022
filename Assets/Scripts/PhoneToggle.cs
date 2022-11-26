@@ -8,13 +8,18 @@ public class PhoneToggle : MonoBehaviour
 {
     [SerializeField] GameObject phonePanel;
     [SerializeField] TextMeshProUGUI testText;
-    [SerializeField] PhoneGameController phoneGame;
+    PhoneGameController phoneGame;
 
     Vector3 mouse;
     RectTransform rectT;
     Vector2 size;
     Rect phoneOnScreen;
 
+
+    private void Start()
+    {
+        phoneGame = GameObject.FindGameObjectWithTag("PhoneGame").GetComponent<PhoneGameController>();
+    }
 
     void Update()
     {

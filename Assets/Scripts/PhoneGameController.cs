@@ -9,7 +9,7 @@ public class PhoneGameController : MonoBehaviour
     [SerializeField] Camera phoneGameCamera;
     [SerializeField] GameObject pointer;
 
-    [SerializeField] TextMeshProUGUI scoreText;
+    TextMeshProUGUI scoreText;
 
     Vector3 pointerOffScreenPos;
 
@@ -28,6 +28,7 @@ public class PhoneGameController : MonoBehaviour
     private void Start()
     {
         pointerOffScreenPos = pointer.transform.position;
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
     }
 
     public void InputMouse(Vector2 mouse)
