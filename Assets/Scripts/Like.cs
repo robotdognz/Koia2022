@@ -36,6 +36,10 @@ public class Like : MonoBehaviour
 
     }
 
+    private void OnMouseDown() {
+        Debug.Log("Exit");
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Finger")

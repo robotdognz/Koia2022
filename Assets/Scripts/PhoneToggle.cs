@@ -23,7 +23,7 @@ public class PhoneToggle : MonoBehaviour
         rectT = phonePanel.GetComponentInChildren<RawImage>().GetComponent<RectTransform>();
         size = Vector2.Scale(rectT.rect.size, rectT.lossyScale);
         phoneOnScreen = new Rect((Vector2)rectT.position - (size * 0.5f), size);
-        if (phoneOnScreen.Contains(mouse) && Input.GetMouseButton(0)) //Input.GetMouseButtonDown(0)
+        if (phoneOnScreen.Contains(mouse) && Input.GetMouseButtonDown(0)) //Input.GetMouseButtonDown(0)
         {
             // get mouse position relative to phone screen
             float mouseX = mouse.x - phoneOnScreen.xMin;

@@ -19,10 +19,11 @@ public class PhoneGameController : MonoBehaviour
     {
         score += 1;
         scoreText.text = "Score: " + score;
-        Debug.Log("Score: " + score);
+        // Debug.Log("Score: " + score);
     }
 
-    private void Start() {
+    private void Start()
+    {
         pointerOffScreenPos = pointer.transform.position;
     }
 
@@ -31,9 +32,28 @@ public class PhoneGameController : MonoBehaviour
         // pointer.SetActive(true);
         // move pointer to mouse
         // Debug.Log("screen pos: "+ mouse + ", world pos: " + phoneGameCamera.ScreenToWorldPoint(mouse));
-        pointer.transform.position = phoneGameCamera.ViewportToWorldPoint(mouse) + Vector3.forward;
 
-        // FindObjectOfType<LikeSpawner>().SpawnNewLike();
+
+        // pointer.transform.position = phoneGameCamera.ViewportToWorldPoint(mouse) + Vector3.forward;
+
+        // phoneGameCamera.ViewportPointToRay
+
+        // phoneGameCamera.ViewportToWorldPoint
+
+
+        // Debug.Log(mouse);
+        // Ray ray = phoneGameCamera.ViewportPointToRay(mouse);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(phoneGameCamera.ViewportPointToRay(mouse));
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.transform.position);
+            Debug.Log(hit.collider.gameObject.name);
+            if (hit.collider.gameObject.tag != "LikeDespawn")
+            {
+                Debug.Log("Thing");
+                Destroy(hit.collider.gameObject);
+            }
+        }
     }
 
     public void NoMouse()
