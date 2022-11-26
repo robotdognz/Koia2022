@@ -8,7 +8,8 @@ public class Like : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     Vector2 movementDirection;
 
-    void Start() {
+    void Start()
+    {
         // choose random sprite
         GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
     }
@@ -18,7 +19,8 @@ public class Like : MonoBehaviour
         movementDirection = direction;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         transform.position += (Vector3)(movementDirection * moveSpeed);
     }
 
@@ -28,6 +30,19 @@ public class Like : MonoBehaviour
         if (other.gameObject.tag == "LikeDespawn")
         {
             // Debug.Log("Exit");
+            Destroy(this.gameObject);
+        }
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Finger")
+        {
+            // increment score
+            PhoneGameController phoneGame = FindObjectOfType<PhoneGameController>();
+            phoneGame.IncrementScore();
             Destroy(this.gameObject);
         }
     }

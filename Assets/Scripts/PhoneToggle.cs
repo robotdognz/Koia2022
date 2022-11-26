@@ -10,16 +10,21 @@ public class PhoneToggle : MonoBehaviour
     [SerializeField] TextMeshProUGUI testText;
     [SerializeField] PhoneGameController phoneGame;
 
+    Vector3 mouse;
+    RectTransform rectT;
+    Vector2 size;
+    Rect phoneOnScreen;
+
+
     void Update()
     {
         // mouse position on phone
-        Vector3 mouse = Input.mousePosition;
-        RectTransform rectT = phonePanel.GetComponentInChildren<RawImage>().GetComponent<RectTransform>();
-        Vector2 size = Vector2.Scale(rectT.rect.size, rectT.lossyScale);
-        Rect phoneOnScreen = new Rect((Vector2)rectT.position - (size * 0.5f), size);
-        if (phoneOnScreen.Contains(mouse))
+        mouse = Input.mousePosition;
+        rectT = phonePanel.GetComponentInChildren<RawImage>().GetComponent<RectTransform>();
+        size = Vector2.Scale(rectT.rect.size, rectT.lossyScale);
+        phoneOnScreen = new Rect((Vector2)rectT.position - (size * 0.5f), size);
+        if (phoneOnScreen.Contains(mouse) && Input.GetMouseButton(0)) //Input.GetMouseButtonDown(0)
         {
-            testText.enabled = true;
             // get mouse position relative to phone screen
             float mouseX = mouse.x - phoneOnScreen.xMin;
             float mouseY = mouse.y - phoneOnScreen.yMin;
@@ -27,16 +32,24 @@ public class PhoneToggle : MonoBehaviour
             mouseX = mouseX / phoneOnScreen.width;
             mouseY = mouseY / phoneOnScreen.height;
             // pass to phone game
-            if (phoneGame != null && Input.GetMouseButtonDown(0))
+            if (phoneGame != null)
             {
                 phoneGame.InputMouse(new Vector2(mouseX, mouseY));
             }
+
             // debug
-            testText.SetText("X:{0:2}\nY:{1:2}", mouseX, mouseY);
+            // testText.enabled = true;
+            // testText.SetText("X:{0:2}\nY:{1:2}", mouseX, mouseY);
         }
         else
         {
-            testText.enabled = false;
+            if (phoneGame != null)
+            {
+                phoneGame.NoMouse();
+            }
+
+            // debug
+            // testText.enabled = false;
         }
 
 
