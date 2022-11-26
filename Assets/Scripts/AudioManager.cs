@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource likeAudioSource;
     [SerializeField] private AudioSource strafeAudioSource;
 
-    [SerializeField] private float encouragementChance = 0.15f;
     [SerializeField] private AudioSource encouragementAudioSource;
     [SerializeField] private AudioClip[] encouragementAudioClips;
 

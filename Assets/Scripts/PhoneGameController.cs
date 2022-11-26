@@ -21,7 +21,7 @@ public class PhoneGameController : MonoBehaviour
         scoreText.text = "Likes: " + score;
         AudioManager.Instance.PlayLikeSound();
         PhoneDeprivation phoneDeprivation = FindObjectOfType<PhoneDeprivation>();
-        phoneDeprivation.RecoverSanity(0.05f);
+        phoneDeprivation.RecoverSanity(0.1f);
         // Debug.Log("Score: " + score);
     }
 
