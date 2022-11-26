@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PhoneDeprivation : MonoBehaviour
 {
-    [SerializeField] private float sanity = 1f;
+    public float sanity = 1f;
     [SerializeField] private float depletionTime = 15f;
 
     private void Start()

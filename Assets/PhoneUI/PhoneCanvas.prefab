@@ -167,6 +167,116 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7225890953975163503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3952570999365240439}
+  - component: {fileID: 477025208680452040}
+  m_Layer: 5
+  m_Name: Thoughts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3952570999365240439
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225890953975163503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7708557409419142981}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0.000061035156}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &477025208680452040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225890953975163503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a950e890421f04cb4ed2aca1984be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleThoughts:
+  - i wonder if my cool pic got any new likes
+  - i'm bored
+  - "i want to play Clout Chaser\u2122"
+  - i should message Glorbo
+  - i need to update my Florgstagram story
+  - i need instant gratification
+  - walking is so boring
+  thoughtFrequency: 3
+  thoughtPrefab: {fileID: 1156676046505186809, guid: 6335d95ffccaafe4a8524e15e3f31857, type: 3}
+  thoughtFrequencyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: -13.340674
+      outSlope: -13.340674
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.116301626
+      value: 0.44845784
+      inSlope: -1.8222582
+      outSlope: -1.8222582
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11575987
+    - serializedVersion: 3
+      time: 0.27333885
+      value: 0.19264396
+      inSlope: -0.44079208
+      outSlope: -0.44079208
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.44020438
+      outWeight: 0.28263453
+    - serializedVersion: 3
+      time: 0.85416365
+      value: 0.0023674113
+      inSlope: 0.018637767
+      outSlope: 0.018637767
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2609999
+      outWeight: 0.7833333
+    - serializedVersion: 3
+      time: 0.9958191
+      value: 0.0023498535
+      inSlope: -0.00012394694
+      outSlope: -0.00012394694
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7536306235493898451
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +943,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7536306236214067414}
+  - {fileID: 3952570999365240439}
   - {fileID: 7708557410283724554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -940,7 +1051,7 @@ RectTransform:
   - {fileID: 1600135158}
   - {fileID: 1483877902}
   m_Father: {fileID: 7708557409419142981}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
