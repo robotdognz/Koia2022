@@ -19,6 +19,7 @@ public class PhoneGameController : MonoBehaviour
     {
         score += 1;
         scoreText.text = "Score: " + score;
+        AudioManager.Instance.PlayLikeSound();
         // Debug.Log("Score: " + score);
     }
 
