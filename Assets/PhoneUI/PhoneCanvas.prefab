@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phone: {fileID: 7708557410283724554}
+  phoneAnimator: {fileID: 7708557410283724555}
 --- !u!1 &1600135157
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,3 +995,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phonePanel: {fileID: 7708557410283724553}
   testText: {fileID: 7536306235493898445}
+  finger: {fileID: 1483877903}

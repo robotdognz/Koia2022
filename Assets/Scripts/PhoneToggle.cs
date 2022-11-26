@@ -8,6 +8,7 @@ public class PhoneToggle : MonoBehaviour
 {
     [SerializeField] GameObject phonePanel;
     [SerializeField] TextMeshProUGUI testText;
+    [SerializeField] Image finger;
     PhoneGameController phoneGame;
 
     Vector3 mouse;
@@ -69,6 +70,7 @@ public class PhoneToggle : MonoBehaviour
                 animator.SetBool("OnPhone", !onPhone);
                 AudioManager.Instance.SetGameState(!onPhone);
                 PostProcessingManager.Instance.SetGameState(!onPhone);
+                finger.enabled = !onPhone;
             }
         }
     }
