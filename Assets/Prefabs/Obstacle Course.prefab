@@ -3483,6 +3483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Point
       objectReference: {fileID: 0}
+    - target: {fileID: 5199771725311338951, guid: b4db01ca852a5a841b41b24122a354b6, type: 3}
+      propertyPath: sprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4db01ca852a5a841b41b24122a354b6, type: 3}
 --- !u!4 &5326200923598641684 stripped
