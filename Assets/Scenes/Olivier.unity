@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 945849436}
   - component: {fileID: 945849435}
   m_Layer: 0
-  m_Name: Square
+  m_Name: ReferenceSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,30 +628,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 174543660106563735, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -380
-      objectReference: {fileID: 0}
     - target: {fileID: 174543660106563736, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
       propertyPath: phoneGame
       value: 
       objectReference: {fileID: 2041717342}
-    - target: {fileID: 174543660863008282, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -70
-      objectReference: {fileID: 0}
-    - target: {fileID: 174543660863008282, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 174543660869067957, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 174543660869067957, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
 --- !u!1 &1607387817
