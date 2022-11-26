@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Finger : MonoBehaviour
 {
+    [SerializeField] private Transform phone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,7 @@ public class Finger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Input.mousePosition + phone.localPosition;
     }
 
     
