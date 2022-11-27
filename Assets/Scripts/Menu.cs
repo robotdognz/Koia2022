@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] Button[] menuButtons;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject instructions;
+    bool isInstructionsButton = true;
+    [SerializeField] Button instructionsButton;
+    [SerializeField] Button messagesButton;
     [SerializeField] RawImage overlay;
     [SerializeField] RawImage screen;
     [SerializeField] RawImage phoneGame;
     [SerializeField] Texture smashedOverlay;
     [SerializeField] Texture smashedScreen;
     [SerializeField] Image blackOut;
+
+    [SerializeField] TextMeshProUGUI scoreText;
 
     [SerializeField] bool startActive = false;
 
@@ -32,7 +38,8 @@ public class Menu : MonoBehaviour
         }
     }
 
-    void Start() {
+    void Start()
+    {
         StartCoroutine(FadeBlack(false));
     }
 
@@ -47,6 +54,9 @@ public class Menu : MonoBehaviour
         }
         titleScreen.SetActive(true);
         instructions.SetActive(false);
+        messagesButton.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
+
     }
 
     public void DeactivateMenu()
@@ -60,6 +70,7 @@ public class Menu : MonoBehaviour
         }
         titleScreen.SetActive(false);
         instructions.SetActive(false);
+        scoreText.gameObject.SetActive(true);
     }
 
     public void LoseGame()
@@ -70,6 +81,7 @@ public class Menu : MonoBehaviour
         overlay.texture = smashedOverlay;
         screen.texture = smashedScreen;
         phoneGame.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
     }
 
     IEnumerator LoseGameIEnum(float time)
@@ -88,7 +100,7 @@ public class Menu : MonoBehaviour
         Color color = blackOut.color;
         float fadeAmount;
 
-        if(fadeToBlack)
+        if (fadeToBlack)
         {
             while (blackOut.color.a < 1)
             {
@@ -124,9 +136,27 @@ public class Menu : MonoBehaviour
 
     public void ShowInstructions()
     {
-        Debug.Log("Display instructions");
-        titleScreen.SetActive(false);
-        instructions.SetActive(true);
+        if (isInstructionsButton)
+        {
+            Debug.Log("Display instructions");
+            titleScreen.SetActive(false);
+            instructions.SetActive(true);
+            isInstructionsButton = false;
+            // change instructions button to messages button
+            instructionsButton.gameObject.SetActive(false);
+            messagesButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Display messages");
+            titleScreen.SetActive(true);
+            instructions.SetActive(false);
+            isInstructionsButton = true;
+            // change messages button to instructions button
+            instructionsButton.gameObject.SetActive(true);
+            messagesButton.gameObject.SetActive(false);
+        }
+
     }
 
     public void Quit()
