@@ -383,7 +383,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 512
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 2c2c28afd6361a54d92d1ca2b2ab3b98, type: 2}
   m_TargetDisplay: 0
@@ -446,6 +446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneGameCamera: {fileID: 811807925290674574}
   pointer: {fileID: 811807924824958942}
+  sanityRecovery: 0.15
+  score: 0
 --- !u!114 &2041717343
 MonoBehaviour:
   m_ObjectHideFlags: 0
