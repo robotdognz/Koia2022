@@ -11,6 +11,20 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject win;
     [SerializeField] GameObject fail;
 
+    [SerializeField] bool startActive = false;
+
+    private void Awake()
+    {
+        if (startActive)
+        {
+            ActivateMenu();
+        }
+        else
+        {
+            DeactivateMenu();
+        }
+    }
+
     public void ActivateMenu()
     {
         if (menuButtons != null && menuButtons.Length > 0)
