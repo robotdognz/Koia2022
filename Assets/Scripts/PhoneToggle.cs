@@ -80,4 +80,12 @@ public class PhoneToggle : MonoBehaviour
             finger.enabled = !onPhone;
         }
     }
+
+    public void PhoneDeath()
+    {
+        Animator animator = phonePanel.GetComponent<Animator>();
+        animator.SetBool("OnPhone", true);
+        AudioManager.Instance.SetGameState(false);
+        finger.enabled = false;
+    }
 }

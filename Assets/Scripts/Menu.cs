@@ -9,9 +9,11 @@ public class Menu : MonoBehaviour
     [SerializeField] Button[] menuButtons;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject instructions;
-    [SerializeField] GameObject win;
-    [SerializeField] GameObject fail;
-
+    [SerializeField] RawImage overlay;
+    [SerializeField] RawImage screen;
+    [SerializeField] RawImage phoneGame;
+    [SerializeField] Texture smashedOverlay;
+    [SerializeField] Texture smashedScreen;
     [SerializeField] Image blackOut;
 
     [SerializeField] bool startActive = false;
@@ -45,8 +47,6 @@ public class Menu : MonoBehaviour
         }
         titleScreen.SetActive(true);
         instructions.SetActive(false);
-        win.SetActive(false);
-        fail.SetActive(false);
     }
 
     public void DeactivateMenu()
@@ -60,14 +60,16 @@ public class Menu : MonoBehaviour
         }
         titleScreen.SetActive(false);
         instructions.SetActive(false);
-        win.SetActive(false);
-        fail.SetActive(false);
     }
 
     public void LoseGame()
     {
         FindObjectOfType<PlayerMovement>().DisablePlayer();
         StartCoroutine(LoseGameIEnum(2));
+        FindObjectOfType<PhoneToggle>().PhoneDeath();
+        overlay.texture = smashedOverlay;
+        screen.texture = smashedScreen;
+        phoneGame.gameObject.SetActive(false);
     }
 
     IEnumerator LoseGameIEnum(float time)
@@ -125,8 +127,6 @@ public class Menu : MonoBehaviour
         Debug.Log("Display instructions");
         titleScreen.SetActive(false);
         instructions.SetActive(true);
-        win.SetActive(false);
-        fail.SetActive(false);
     }
 
     public void Quit()
