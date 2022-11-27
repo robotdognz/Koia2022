@@ -22,6 +22,7 @@ public class CollideIntoObstacle : MonoBehaviour
         {
             Debug.Log("You crashed into something and dropped your phone.This is the end of your journey.");
             AudioManager.Instance.PlayObstacleHitSound();
+            FindObjectOfType<Menu>().LoseGame();
             //Application.Quit();//for now
         }
 

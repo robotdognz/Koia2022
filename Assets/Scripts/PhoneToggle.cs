@@ -21,7 +21,7 @@ public class PhoneToggle : MonoBehaviour
     {
         phoneGame = GameObject.FindGameObjectWithTag("PhoneGame").GetComponent<PhoneGameController>();
         AudioManager.Instance.SetGameState(true);
-        PostProcessingManager.Instance.SetGameState(true);
+        // PostProcessingManager.Instance.SetGameState(true);
         finger.enabled = true;
     }
 
