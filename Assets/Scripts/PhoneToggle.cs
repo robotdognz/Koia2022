@@ -20,6 +20,9 @@ public class PhoneToggle : MonoBehaviour
     private void Start()
     {
         phoneGame = GameObject.FindGameObjectWithTag("PhoneGame").GetComponent<PhoneGameController>();
+        AudioManager.Instance.SetGameState(true);
+        PostProcessingManager.Instance.SetGameState(true);
+        finger.enabled = true;
     }
 
     void Update()
@@ -58,20 +61,23 @@ public class PhoneToggle : MonoBehaviour
             // testText.enabled = false;
         }
 
-
         // move phone
-        if (phonePanel != null && Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1)) //phonePanel != null && 
         {
-            // toggle phone
-            Animator animator = phonePanel.GetComponent<Animator>();
-            if (animator != null)
-            {
-                bool onPhone = animator.GetBool("OnPhone");
-                animator.SetBool("OnPhone", !onPhone);
-                AudioManager.Instance.SetGameState(!onPhone);
-                PostProcessingManager.Instance.SetGameState(!onPhone);
-                finger.enabled = !onPhone;
-            }
+            TogglePhone();
+        }
+    }
+
+    public void TogglePhone()
+    {
+        Animator animator = phonePanel.GetComponent<Animator>();
+        if (phonePanel != null && animator != null)
+        {
+            bool onPhone = animator.GetBool("OnPhone");
+            animator.SetBool("OnPhone", !onPhone);
+            AudioManager.Instance.SetGameState(!onPhone);
+            PostProcessingManager.Instance.SetGameState(!onPhone);
+            finger.enabled = !onPhone;
         }
     }
 }

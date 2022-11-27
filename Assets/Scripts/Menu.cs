@@ -58,7 +58,10 @@ public class Menu : MonoBehaviour
     public void StartNewGame()
     {
         Debug.Log("Started new game");
+        DeactivateMenu();
         // start the game
+        FindObjectOfType<PlayerMovement>().EnablePlayer();
+        FindObjectOfType<PhoneToggle>().TogglePhone();
     }
 
     public void ShowInstructions()
