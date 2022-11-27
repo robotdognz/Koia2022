@@ -614,11 +614,11 @@ MonoBehaviour:
   - {fileID: 235484020217222937}
   titleScreen: {fileID: 6783653286456038022}
   instructions: {fileID: 5464454673829088760}
-  overlay: {fileID: 0}
-  screen: {fileID: 0}
-  phoneGame: {fileID: 0}
-  smashedOverlay: {fileID: 0}
-  smashedScreen: {fileID: 0}
+  overlay: {fileID: 7536306237032222705}
+  screen: {fileID: 7536306236890558758}
+  phoneGame: {fileID: 7708557408884095787}
+  smashedOverlay: {fileID: 2800000, guid: cfa3b87aeba37294383d22294ae6b768, type: 3}
+  smashedScreen: {fileID: 2800000, guid: 6b60accf45d1bbd47bbbd2a4c3fe00c8, type: 3}
   blackOut: {fileID: 1793381940026436899}
   startActive: 1
 --- !u!1 &7225067998663640602
@@ -814,14 +814,23 @@ MonoBehaviour:
   - "i sure do wish i was playing Clout Chaser\u2122"
   - what's Glorbo doing now?
   - DanDaniel's party, who else is going?
-  - think. think about something to update my status
+  - think. think about something to update my status with
   - i'm so glad no one is seeing me walk
   - i can't be seen at DanDaniel's party in these clothes
   - don't forget to buy sausages for mom
   - don't forget to... what was it?
   - there was something I was meant to do
   - somebody tell me a story
-  - no way Glorbo collected more likes
+  - no way Larry collected more likes
+  - why does Larry have such a flat head?
+  - why am I not entertained?
+  - does Glorbo like me?
+  - will Glorbo go to DanDaniel's party?
+  - should I ask Glorbo to DanDaniel's party?
+  - maybe i should ask what Larry thinks
+  - what's DanDaniel up to?
+  - don't forget to buy onions for mom
+  - ... ahhhh, Glorbo...
   thoughtFrequency: 3
   thoughtPrefab: {fileID: 1156676046505186809, guid: 6335d95ffccaafe4a8524e15e3f31857, type: 3}
   thoughtFrequencyCurve:
