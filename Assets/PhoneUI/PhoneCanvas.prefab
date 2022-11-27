@@ -1293,6 +1293,7 @@ MonoBehaviour:
   - what's DanDaniel up to?
   - don't forget to buy onions for mom
   - ... ahhhh, Glorbo...
+  phoneReminder: i should check my phone with SPACE
   thoughtFrequency: 3
   thoughtPrefab: {fileID: 1156676046505186809, guid: 6335d95ffccaafe4a8524e15e3f31857, type: 3}
   thoughtFrequencyCurve:
@@ -2179,6 +2180,7 @@ MonoBehaviour:
   phonePanel: {fileID: 7708557410283724553}
   testText: {fileID: 7536306235493898445}
   finger: {fileID: 1483877903}
+  hasUsedPhone: 0
 --- !u!1 &8489744187876041330
 GameObject:
   m_ObjectHideFlags: 0
