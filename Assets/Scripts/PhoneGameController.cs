@@ -20,6 +20,10 @@ public class PhoneGameController : MonoBehaviour
     public void IncrementScore()
     {
         score += 1;
+        if (scoreText == null)
+        {
+            scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        }
         scoreText.text = "Likes: " + score;
         AudioManager.Instance.PlayLikeSound();
         PhoneDeprivation phoneDeprivation = FindObjectOfType<PhoneDeprivation>();
@@ -30,7 +34,10 @@ public class PhoneGameController : MonoBehaviour
     private void Start()
     {
         pointerOffScreenPos = pointer.transform.position;
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        if (scoreText != null)
+        {
+            scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        }
     }
 
     public void InputMouse(Vector2 mouse)
