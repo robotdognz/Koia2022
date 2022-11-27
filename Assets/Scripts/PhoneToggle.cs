@@ -16,6 +16,8 @@ public class PhoneToggle : MonoBehaviour
     Vector2 size;
     Rect phoneOnScreen;
 
+    public bool hasUsedPhone = false;
+
 
     private void Start()
     {
@@ -64,6 +66,7 @@ public class PhoneToggle : MonoBehaviour
         // move phone
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1)) //phonePanel != null && 
         {
+            if (!hasUsedPhone) hasUsedPhone = true;
             TogglePhone();
         }
     }

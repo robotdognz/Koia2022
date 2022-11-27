@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3757218, g: 0.74592805, b: 0.7175535, a: 1}
+  m_IndirectSpecularColor: {r: 0.73041683, g: 0.4234008, b: 0.6060493, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -529,6 +529,10 @@ PrefabInstance:
     - target: {fileID: 1691879462, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 477025208680452040, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
+      propertyPath: phoneReminder
+      value: i should check my phone with SPACE
       objectReference: {fileID: 0}
     - target: {fileID: 7708557409419142981, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
       propertyPath: m_Pivot.x

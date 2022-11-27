@@ -88,8 +88,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //Debug.Log("I quit.");
-            Application.Quit();
+            if (Application.platform != RuntimePlatform.WebGLPlayer)
+            {
+                Application.Quit();
+            }
         }
     }
 
