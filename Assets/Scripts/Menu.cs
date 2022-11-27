@@ -12,10 +12,14 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject win;
     [SerializeField] GameObject fail;
 
+    [SerializeField] Image blackOut;
+
     [SerializeField] bool startActive = false;
 
     private void Awake()
     {
+        blackOut.gameObject.SetActive(true);
+
         if (startActive)
         {
             ActivateMenu();
@@ -24,6 +28,10 @@ public class Menu : MonoBehaviour
         {
             DeactivateMenu();
         }
+    }
+
+    void Start() {
+        StartCoroutine(FadeBlack(false));
     }
 
     public void ActivateMenu()
@@ -65,10 +73,41 @@ public class Menu : MonoBehaviour
     IEnumerator LoseGameIEnum(float time)
     {
         yield return new WaitForSeconds(time);
+        StartCoroutine(FadeBlack());
 
         // restart game
         Debug.Log("Lost game");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+    IEnumerator FadeBlack(bool fadeToBlack = true, int fadeSpeed = 5)
+    {
+        Color color = blackOut.color;
+        float fadeAmount;
+
+        if(fadeToBlack)
+        {
+            while (blackOut.color.a < 1)
+            {
+                fadeAmount = color.a + (fadeSpeed * Time.deltaTime);
+
+                color = new Color(color.r, color.g, color.b, fadeAmount);
+                blackOut.color = color;
+                yield return null;
+            }
+        }
+        else
+        {
+            while (blackOut.color.a > 0)
+            {
+                fadeAmount = color.a - (fadeSpeed * Time.deltaTime);
+
+                color = new Color(color.r, color.g, color.b, fadeAmount);
+                blackOut.color = color;
+                yield return null;
+            }
+        }
     }
 
     public void StartNewGame()

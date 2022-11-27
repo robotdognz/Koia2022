@@ -465,14 +465,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1483877903, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1675322232955188213, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: startActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7708557409419142981, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -560,10 +552,6 @@ PrefabInstance:
     - target: {fileID: 7708557409419142985, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
       propertyPath: m_Name
       value: PhoneCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7708557410283724554, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a415da5a4137b39459ab9bfe4836a25d, type: 3}
