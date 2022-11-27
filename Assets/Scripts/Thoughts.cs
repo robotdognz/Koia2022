@@ -45,7 +45,7 @@ public class Thoughts : MonoBehaviour
         Vector3 direction = Random.insideUnitCircle * 0.1f;
         TextMeshProUGUI thoughtText = thought.GetComponent<TextMeshProUGUI>();
         if (hasUsedPhone) thoughtText.text = possibleThoughts[Random.Range(0, possibleThoughts.Length)];
-        else if (thoughtCount % 5 == 0 && thoughtCount > 0) thoughtText.text = phoneReminder;
+        else if ((thoughtCount + 3) % 5 == 0 && thoughtCount > 0) thoughtText.text = phoneReminder;
         else thoughtText.text = possibleThoughts[Random.Range(0, possibleThoughts.Length)];
         thought.transform.position = new Vector3(Random.Range(150f, Screen.width - 150f), Random.Range(50f, Screen.height - 50f), 0);
         thought.transform.eulerAngles = new Vector3(0, 0, Random.Range(-10, 10));
