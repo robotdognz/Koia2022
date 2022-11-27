@@ -720,6 +720,17 @@ MonoBehaviour:
   - i need to update my Florgstagram story
   - i need instant gratification
   - walking is so boring
+  - "i sure do wish i was playing Clout Chaser\u2122"
+  - what's Glorbo doing now?
+  - DanDaniel's party, who else is going?
+  - think. think about something to update my status
+  - i'm so glad no one is seeing me walk
+  - i can't be seen at DanDaniel's party in these clothes
+  - don't forget to buy sausages for mom
+  - don't forget to... what was it?
+  - there was something I was meant to do
+  - somebody tell me a story
+  - no way Glorbo collected more likes
   thoughtFrequency: 3
   thoughtPrefab: {fileID: 1156676046505186809, guid: 6335d95ffccaafe4a8524e15e3f31857, type: 3}
   thoughtFrequencyCurve:
@@ -728,20 +739,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 2
-      inSlope: -13.340674
-      outSlope: -13.340674
+      inSlope: -6.2011595
+      outSlope: -6.2011595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.116301626
-      value: 0.44845784
-      inSlope: -1.8222582
-      outSlope: -1.8222582
+      time: 0.091404624
+      value: 1.4331853
+      inSlope: -3.666772
+      outSlope: -3.666772
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.70043755
       outWeight: 0.11575987
     - serializedVersion: 3
       time: 0.27333885

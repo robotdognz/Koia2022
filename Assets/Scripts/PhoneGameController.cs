@@ -9,6 +9,8 @@ public class PhoneGameController : MonoBehaviour
     [SerializeField] Camera phoneGameCamera;
     [SerializeField] GameObject pointer;
 
+    [SerializeField] private float sanityRecovery = 0.15f;
+
     TextMeshProUGUI scoreText;
 
     Vector3 pointerOffScreenPos;
@@ -21,7 +23,7 @@ public class PhoneGameController : MonoBehaviour
         scoreText.text = "Likes: " + score;
         AudioManager.Instance.PlayLikeSound();
         PhoneDeprivation phoneDeprivation = FindObjectOfType<PhoneDeprivation>();
-        phoneDeprivation.RecoverSanity(0.1f);
+        phoneDeprivation.RecoverSanity(sanityRecovery);
         // Debug.Log("Score: " + score);
     }
 
