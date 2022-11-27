@@ -49,10 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardMoveSpeed: 10
   laneChangeSpeed: 20
-  lanes: 3
-  pathWidth: 45
+  lanes: 5
+  pathWidth: 50
   currentLane: 0
   changingLane: 0
+  isMoving: 1
 --- !u!114 &610549952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanity: 1
-  depletionTime: 20
+  depletionTime: 25
 --- !u!1 &242989579410548941
 GameObject:
   m_ObjectHideFlags: 0

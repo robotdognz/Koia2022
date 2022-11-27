@@ -22,7 +22,7 @@ public class PhoneDeprivation : MonoBehaviour
 
         //if (ppVolume != null) ppVolume.weight = Remap(sanity, 0f, 0.5f, 1f, 0f);
 
-        PostProcessingManager.Instance.SetInsanityLevel(1 - sanity);
+        PostProcessingManager.Instance.SetInsanityLevel(Remap(sanity, 0f, 0.66f, 1f, 0f));
     }
 
     public void RecoverSanity(float amount)
