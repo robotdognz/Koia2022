@@ -15,7 +15,7 @@ public class PhoneGameController : MonoBehaviour
 
     Vector3 pointerOffScreenPos;
 
-    int score = 0;
+    public int score = 0;
 
     public void IncrementScore()
     {

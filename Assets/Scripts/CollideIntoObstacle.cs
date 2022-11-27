@@ -32,6 +32,7 @@ public class CollideIntoObstacle : MonoBehaviour
             AudioManager.Instance.PlayCourseCompleteSound();
             FindObjectOfType<PlayerMovement>().DisablePlayer();
             FindObjectOfType<PhoneDeprivation>().RecoverSanity(1f);
+            FindObjectOfType<EndDialogue>().StartDialogue();
 
             if (AudioManager.Instance.OnPhone) FindObjectOfType<PhoneToggle>().TogglePhone();
             
