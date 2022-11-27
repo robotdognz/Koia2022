@@ -8,15 +8,17 @@ public class PhoneDeprivation : MonoBehaviour
     public float sanity = 1f;
     [SerializeField] private float depletionTime = 15f;
 
+    private PlayerMovement playerMovement;
+
     private void Start()
     {
-
+        playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        sanity -= Time.deltaTime / depletionTime;
+        if (!AudioManager.Instance.OnPhone && playerMovement.isMoving) sanity -= Time.deltaTime / depletionTime;
         sanity = Mathf.Clamp(sanity, 0f, 1f);
         AudioManager.Instance.SetInsanityLevel(1 - sanity);
 

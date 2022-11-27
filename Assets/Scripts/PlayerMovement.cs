@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput = 0;
 
-    [SerializeField] bool isMoving = true;
+    public bool isMoving = true;
 
     void Awake()
     {
