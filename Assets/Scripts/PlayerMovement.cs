@@ -50,11 +50,13 @@ public class PlayerMovement : MonoBehaviour
     public void DisablePlayer()
     {
         isMoving = false;
+        AudioManager.Instance.SetMoving(isMoving);
     }
 
     public void EnablePlayer()
     {
         isMoving = true;
+        AudioManager.Instance.SetMoving(isMoving);
     }
 
     void Update()

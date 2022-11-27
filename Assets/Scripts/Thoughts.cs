@@ -34,6 +34,7 @@ public class Thoughts : MonoBehaviour
     {
         float opacity = 0f;
         GameObject thought = Instantiate(thoughtPrefab, transform);
+        Vector3 direction = Random.insideUnitCircle * 0.1f;
         TextMeshProUGUI thoughtText = thought.GetComponent<TextMeshProUGUI>();
         thoughtText.text = possibleThoughts[Random.Range(0, possibleThoughts.Length)];
         thought.transform.position = new Vector3(Random.Range(150f, Screen.width - 150f), Random.Range(50f, Screen.height - 50f), 0);
@@ -43,6 +44,7 @@ public class Thoughts : MonoBehaviour
         {
             opacity += Time.deltaTime;
             thoughtText.color = new Color(1, 1, 1, opacity);
+            thought.transform.position += direction;
             yield return null;
         }
 
@@ -51,6 +53,7 @@ public class Thoughts : MonoBehaviour
         while (waitTimer < 2f)
         {
             waitTimer += Time.deltaTime;
+            thought.transform.position += direction;
             yield return null;
         }
 
@@ -58,6 +61,7 @@ public class Thoughts : MonoBehaviour
         {
             opacity -= Time.deltaTime;
             thoughtText.color = new Color(1, 1, 1, opacity);
+            thought.transform.position += direction;
             yield return null;
         }
 

@@ -28,6 +28,9 @@ public class CollideIntoObstacle : MonoBehaviour
         if (crash.gameObject.tag == "End Point")
         {
             Debug.Log("My friend! You are here!");
+            AudioManager.Instance.PlayCourseCompleteSound();
+            FindObjectOfType<PlayerMovement>().DisablePlayer();
+            FindObjectOfType<PhoneDeprivation>().RecoverSanity(1f);
             //Application.Quit();//for now
         }
 
