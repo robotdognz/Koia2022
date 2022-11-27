@@ -93,6 +93,9 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Debug.Log("Quit game");
-        // quit the game
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            Application.Quit();
+        }
     }
 }
