@@ -12,6 +12,18 @@ public class LikeSpawner : MonoBehaviour
     float currentSpawnTime = 0;
     float time = 0;
 
+    bool gameRunning = false;
+
+    public void StartPhoneGame()
+    {
+        gameRunning = true;
+    }
+
+    public void StopPhoneGame()
+    {
+        gameRunning = true;
+    }
+
     public void SpawnNewLike()
     {
         // choose random spawn point
@@ -30,13 +42,16 @@ public class LikeSpawner : MonoBehaviour
 
     void FixedUpdate()
     {
-        // spawn 'like' at random intervals
-        time += Time.fixedDeltaTime;
-        if (time >= currentSpawnTime)
+        if (gameRunning)
         {
-            SpawnNewLike();
-            currentSpawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
-            time = 0;
+            // spawn 'like' at random intervals
+            time += Time.fixedDeltaTime;
+            if (time >= currentSpawnTime)
+            {
+                SpawnNewLike();
+                currentSpawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
+                time = 0;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -55,6 +56,21 @@ public class Menu : MonoBehaviour
         fail.SetActive(false);
     }
 
+    public void LoseGame()
+    {
+        FindObjectOfType<PlayerMovement>().DisablePlayer();
+        StartCoroutine(LoseGameIEnum(2));
+    }
+
+    IEnumerator LoseGameIEnum(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // restart game
+        Debug.Log("Lost game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void StartNewGame()
     {
         Debug.Log("Started new game");
@@ -62,6 +78,7 @@ public class Menu : MonoBehaviour
         // start the game
         FindObjectOfType<PlayerMovement>().EnablePlayer();
         FindObjectOfType<PhoneToggle>().TogglePhone();
+        FindObjectOfType<LikeSpawner>().StartPhoneGame();
     }
 
     public void ShowInstructions()
@@ -76,6 +93,9 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Debug.Log("Quit game");
-        // quit the game
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            Application.Quit();
+        }
     }
 }
