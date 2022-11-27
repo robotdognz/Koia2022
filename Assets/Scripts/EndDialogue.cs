@@ -37,7 +37,7 @@ public class EndDialogue : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-            if (i != dialogueBoxes.Length - 1) { 
+            if (i != dialogueBoxes.Length - 1) {
 
                 while (opacity > 0f)
                 {
@@ -47,6 +47,11 @@ public class EndDialogue : MonoBehaviour
                 }
 
                 dialogueBoxes[i].SetActive(false);
+            }
+            
+            else {
+                yield return new WaitForSeconds(6f);
+
             }
         }
     }
