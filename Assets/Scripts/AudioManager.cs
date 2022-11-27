@@ -16,10 +16,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip phoneCloseClip;
 
     [SerializeField] private AudioSource insanityAudioSource;
-
+    [SerializeField] private AudioSource footstepsAudioSource;
     [SerializeField] private AudioSource likeAudioSource;
     [SerializeField] private AudioSource strafeAudioSource;
     [SerializeField] private AudioSource hitObstacleAudioSource;
+    [SerializeField] private AudioSource courseCompleteAudioSource;
 
     [SerializeField] private AudioSource encouragementAudioSource;
     [SerializeField] private AudioClip[] encouragementAudioClips;
@@ -85,7 +86,15 @@ public class AudioManager : MonoBehaviour
         if (encouragementCounter <= 0) PlayEncouragementSound();
     }
 
+    public void SetMoving(bool isMoving)
+    {
+        if (isMoving) footstepsAudioSource.Play();
+        else footstepsAudioSource.Stop();
+    }
+
     public void PlayObstacleHitSound() => hitObstacleAudioSource.Play();
+
+    public void PlayCourseCompleteSound() => courseCompleteAudioSource.Play();
 
     public void PlayStrafeSound() => strafeAudioSource.Play();
 
