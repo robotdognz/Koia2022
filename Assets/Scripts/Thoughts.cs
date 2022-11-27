@@ -13,15 +13,17 @@ public class Thoughts : MonoBehaviour
 
     private float thoughtTimer = 1f;
     private PhoneDeprivation phoneDeprivation;
+    private PlayerMovement playerMovement;
 
     private void Awake()
     {
         phoneDeprivation = FindObjectOfType<PhoneDeprivation>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     void Update()
     {
-        if (!AudioManager.Instance.OnPhone) thoughtTimer -= Time.deltaTime * thoughtFrequencyCurve.Evaluate(phoneDeprivation.sanity) * thoughtFrequency;
+        if (!AudioManager.Instance.OnPhone && playerMovement.isMoving) thoughtTimer -= Time.deltaTime * thoughtFrequencyCurve.Evaluate(phoneDeprivation.sanity) * thoughtFrequency;
 
         if (thoughtTimer <= 0f)
         {

@@ -84,6 +84,25 @@ public class Menu : MonoBehaviour
         scoreText.gameObject.SetActive(false);
     }
 
+    public void WinGame()
+    {
+        FindObjectOfType<PlayerMovement>().DisablePlayer();
+        FindObjectOfType<PhoneDeprivation>().RecoverSanity(1f);
+        FindObjectOfType<EndDialogue>().StartDialogue();
+        if (AudioManager.Instance.OnPhone) FindObjectOfType<PhoneToggle>().TogglePhone();
+        FindObjectOfType<PhoneToggle>().enabled = false;
+
+        StartCoroutine(WinGameIEnum(10));
+    }
+
+    IEnumerator WinGameIEnum(float time)
+    {
+        yield return new WaitForSeconds(time);
+        StartCoroutine(FadeBlack());
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     IEnumerator LoseGameIEnum(float time)
     {
         yield return new WaitForSeconds(time);
